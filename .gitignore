@@ -1,0 +1,16 @@
+# No key material in the repository. Every test regenerates its own via gen.sh.
+*.key
+*.pem
+*.csr
+*.srl
+*.sess
+sess.pem
+bundle.pem
+
+# Per-run scratch. The curated transcripts under runs/ are the committed evidence.
+*.out
+*.pid
+logs/
+profile/
+connections.log
+result-*.log
