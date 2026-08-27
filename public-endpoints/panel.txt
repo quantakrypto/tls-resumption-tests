@@ -1,0 +1,36 @@
+# The panel. One host per line: hostname, then why it is here.
+#
+# Blank lines and lines beginning with # are ignored. Everything after the first run of
+# whitespace is the comment and is copied verbatim into results.json, so the reason a host was
+# measured travels with its measurement.
+#
+# CAVEAT ON THE PROVIDER LABELS. Every "provider" word below is an inference, drawn from the
+# served certificate's issuer and subject, from the response headers, and from public
+# documentation. It is not measured. These are CDN-fronted sites and the mapping from hostname
+# to terminating edge can be wrong, can differ per point of presence, and can change without
+# notice. probe.py records the certificate it actually saw; the labels here are context, not a
+# result, and results.json keeps them in a field named panel_comment for exactly that reason.
+#
+# EVERY HOST IS THE PROVIDER'S OWN PUBLIC MARKETING OR DOCUMENTATION SITE. None is a customer
+# deployment. That is a deliberate selection rule: a customer's origin behind a provider's edge
+# would make the measurement a statement about that customer, which is not ours to make.
+
+aws.amazon.com          AWS. Amazon's own product site, served from CloudFront.
+docs.aws.amazon.com     AWS. Amazon's own documentation site, served from CloudFront. Second AWS point of presence, so a divergence between the two is visible rather than hidden.
+cloud.google.com        Google Cloud. Google's own product and documentation site, served from the Google Front End.
+azure.microsoft.com     Azure. Microsoft's own product site, served from Azure Front Door.
+learn.microsoft.com     Azure. Microsoft's own documentation site, served from Azure Front Door. Second Microsoft point of presence, same reason as the second AWS one.
+www.cloudflare.com      Cloudflare. Cloudflare's own product site, served from Cloudflare.
+developers.cloudflare.com  Cloudflare. Cloudflare's own developer documentation, served from Cloudflare Pages, which is a different product from the one in front of www.
+www.fastly.com          Fastly. Fastly's own product site, served from Fastly.
+docs.fastly.com         Fastly. Fastly's own documentation site, served from Fastly.
+
+# Reference points. These are not cloud front doors. They are here to give the cloud numbers
+# something to be compared against: standards and CA infrastructure, a large first-party edge,
+# and a root-programme operator.
+
+ietf.org                Reference. The standards body that publishes RFC 8446. The paper quotes its chain.
+letsencrypt.org         Reference. The CA whose issuance the paper's chain-size figures are drawn from.
+github.com              Reference. A large first-party edge that is not one of the five providers above.
+google.com              Reference. The Google Front End on its highest-volume name, against which cloud.google.com can be compared.
+mozilla.org             Reference. Operator of a root programme, and the source of the client-side policy the paper leans on.

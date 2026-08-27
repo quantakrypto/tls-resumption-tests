@@ -1,0 +1,1447 @@
+{
+  "run": {
+    "started_utc": "2026-08-27T23:50:11Z",
+    "finished_utc": "2026-08-27T23:51:17Z",
+    "openssl_version": "OpenSSL 3.6.3 9 Jun 2026 (Library: OpenSSL 3.6.3 9 Jun 2026)",
+    "openssl_dir": "/opt/homebrew/etc/openssl@3",
+    "ca_file": null,
+    "ca_source": "openssl default trust store",
+    "panel": "panel.txt",
+    "panel_sha256": "f05931e024c211d5d27e36437a177a22d0f5b8dda6911bd4488acd2634543f47",
+    "port": 443,
+    "address_family_preference": "ipv4",
+    "request_per_connection": "head",
+    "hold_seconds": 2.0,
+    "timeout_seconds": 20.0,
+    "resume_gap_seconds": 1.0,
+    "pause_between_hosts_seconds": 3.0,
+    "connections_per_host": 2,
+    "platform": "Darwin Leon-DL-MacBook-Pro.local 25.2.0 Darwin Kernel Version 25.2.0: Tue Nov 18 21:09:40 PST 2025; root:xnu-12377.61.12~1/RELEASE_ARM64_T6000 arm64",
+    "scope": "Certificate handshake only. No client certificate, no credential, no authorisation test. Every session ticket is offered back only to the host and SNI that issued it."
+  },
+  "records": [
+    {
+      "host": "aws.amazon.com",
+      "panel_comment": "AWS. Amazon's own product site, served from CloudFront.",
+      "measured_at_utc": "2026-08-27T23:50:11Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "13.32.121.33",
+        "13.32.121.41",
+        "13.32.121.53",
+        "13.32.121.54"
+      ],
+      "ip": "13.32.121.33",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "aws.amazon.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.426
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 3916,
+        "der_bytes_per_certificate": [
+          1620,
+          1122,
+          1174
+        ],
+        "leaf": {
+          "subject": "CN=aws.amazon.com",
+          "issuer": "CN=Amazon RSA 2048 M04,O=Amazon,C=US",
+          "issuer_cn": "Amazon RSA 2048 M04",
+          "signature_algorithm": "sha256WithRSAEncryption",
+          "key_type": "RSA",
+          "key_algorithm_oid_name": "rsaEncryption",
+          "key_bits": 2048,
+          "key_curve": null,
+          "not_before": "2025-11-06 00:00:00Z",
+          "not_after": "2026-10-17 23:59:59Z",
+          "der_bytes": 1620,
+          "sha256": "cfa6cb614dbd503d3e4990a3df3e36129425d9e962a29e5d6ffb72e623cdbd6c",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 1,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 72108,
+        "lifetime_hints_observed": [
+          72108
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 2664
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.251
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "docs.aws.amazon.com",
+      "panel_comment": "AWS. Amazon's own documentation site, served from CloudFront. Second AWS point of presence, so a divergence between the two is visible rather than hidden.",
+      "measured_at_utc": "2026-08-27T23:50:16Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "13.35.58.2",
+        "13.35.58.67",
+        "13.35.58.82",
+        "13.35.58.99"
+      ],
+      "ip": "13.35.58.2",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "docs.aws.amazon.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.147
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 3778,
+        "der_bytes_per_certificate": [
+          1482,
+          1122,
+          1174
+        ],
+        "leaf": {
+          "subject": "CN=docs.aws.amazon.com",
+          "issuer": "CN=Amazon RSA 2048 M01,O=Amazon,C=US",
+          "issuer_cn": "Amazon RSA 2048 M01",
+          "signature_algorithm": "sha256WithRSAEncryption",
+          "key_type": "RSA",
+          "key_algorithm_oid_name": "rsaEncryption",
+          "key_bits": 2048,
+          "key_curve": null,
+          "not_before": "2025-11-09 00:00:00Z",
+          "not_after": "2026-12-08 23:59:59Z",
+          "der_bytes": 1482,
+          "sha256": "a3a802e82e7d605cc6dd1834351a6e278fbcc3770a4b63589cd0f4e41b882c38",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 1,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 50488,
+        "lifetime_hints_observed": [
+          50488
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 2481
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.137
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "cloud.google.com",
+      "panel_comment": "Google Cloud. Google's own product and documentation site, served from the Google Front End.",
+      "measured_at_utc": "2026-08-27T23:50:20Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "108.177.15.100",
+        "108.177.15.101",
+        "108.177.15.102",
+        "108.177.15.113",
+        "108.177.15.138",
+        "108.177.15.139"
+      ],
+      "ip": "108.177.15.100",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "*.google.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.202
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 4812,
+        "der_bytes_per_certificate": [
+          2135,
+          1295,
+          1382
+        ],
+        "leaf": {
+          "subject": "CN=*.google.com",
+          "issuer": "CN=WR2,O=Google Trust Services,C=US",
+          "issuer_cn": "WR2",
+          "signature_algorithm": "sha256WithRSAEncryption",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2026-08-10 08:37:35Z",
+          "not_after": "2026-11-02 08:37:34Z",
+          "der_bytes": 2135,
+          "sha256": "8f95cc30e88f6b71ef351f710332850c5544e7594af40b1a7e119e18efd61022",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 172800,
+        "lifetime_hints_observed": [
+          172800,
+          172800
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 3513
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.211
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "azure.microsoft.com",
+      "panel_comment": "Azure. Microsoft's own product site, served from Azure Front Door.",
+      "measured_at_utc": "2026-08-27T23:50:25Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "23.212.194.150"
+      ],
+      "ip": "23.212.194.150",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "azure.microsoft.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 2.556
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 5785,
+        "der_bytes_per_certificate": [
+          2384,
+          1980,
+          1421
+        ],
+        "leaf": {
+          "subject": "CN=azure.microsoft.com,O=Microsoft Corporation,L=Redmond,ST=WA,C=US",
+          "issuer": "CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US",
+          "issuer_cn": "Microsoft TLS G2 RSA CA OCSP 04",
+          "signature_algorithm": "sha384WithRSAEncryption",
+          "key_type": "RSA",
+          "key_algorithm_oid_name": "rsaEncryption",
+          "key_bits": 2048,
+          "key_curve": null,
+          "not_before": "2026-03-10 22:04:48Z",
+          "not_after": "2026-09-24 22:04:48Z",
+          "der_bytes": 2384,
+          "sha256": "750a1e95de398a7b69c61505286b0cd4dcdb56dae06d75fcca643052bda56034",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 83100,
+        "lifetime_hints_observed": [
+          83100,
+          83100
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 3887
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 2.568
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "learn.microsoft.com",
+      "panel_comment": "Azure. Microsoft's own documentation site, served from Azure Front Door. Second Microsoft point of presence, same reason as the second AWS one.",
+      "measured_at_utc": "2026-08-27T23:50:34Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "23.212.193.214"
+      ],
+      "ip": "23.212.193.214",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "learn.microsoft.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.366
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 3725,
+        "der_bytes_per_certificate": [
+          1760,
+          1134,
+          831
+        ],
+        "leaf": {
+          "subject": "CN=learn.microsoft.com,O=Microsoft Corporation,L=Redmond,ST=WA,C=US",
+          "issuer": "CN=Microsoft TLS G2 ECC CA OCSP 02,O=Microsoft Corporation,C=US",
+          "issuer_cn": "Microsoft TLS G2 ECC CA OCSP 02",
+          "signature_algorithm": "ecdsa-with-SHA384",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2025-12-16 02:26:09Z",
+          "not_after": "2026-12-11 02:26:09Z",
+          "der_bytes": 1760,
+          "sha256": "3f32d336a7ae084b98d2649ec8f0be967e3b658cb0d004887c6c515fbbe54395",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 83100,
+        "lifetime_hints_observed": [
+          83100,
+          83100
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 3042
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.334
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "www.cloudflare.com",
+      "panel_comment": "Cloudflare. Cloudflare's own product site, served from Cloudflare.",
+      "measured_at_utc": "2026-08-27T23:50:39Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "104.16.123.96",
+        "104.16.124.96"
+      ],
+      "ip": "104.16.123.96",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "www.cloudflare.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.203
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 2493,
+        "der_bytes_per_certificate": [
+          924,
+          675,
+          894
+        ],
+        "leaf": {
+          "subject": "CN=www.cloudflare.com",
+          "issuer": "CN=WE1,O=Google Trust Services,C=US",
+          "issuer_cn": "WE1",
+          "signature_algorithm": "ecdsa-with-SHA256",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2026-08-14 20:26:17Z",
+          "not_after": "2026-11-12 21:26:08Z",
+          "der_bytes": 924,
+          "sha256": "052bfe179ef0df5e3911fc6c62beea2aa5beb06b1323779bdd56a84845f33207",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 64800,
+        "lifetime_hints_observed": [
+          64800,
+          64800
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 1819
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.203
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "developers.cloudflare.com",
+      "panel_comment": "Cloudflare. Cloudflare's own developer documentation, served from Cloudflare Pages, which is a different product from the one in front of www.",
+      "measured_at_utc": "2026-08-27T23:50:44Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "104.16.2.189",
+        "104.16.3.189",
+        "104.16.4.189",
+        "104.16.5.189",
+        "104.16.6.189"
+      ],
+      "ip": "104.16.2.189",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "developers.cloudflare.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.204
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 2515,
+        "der_bytes_per_certificate": [
+          946,
+          675,
+          894
+        ],
+        "leaf": {
+          "subject": "CN=developers.cloudflare.com",
+          "issuer": "CN=WE1,O=Google Trust Services,C=US",
+          "issuer_cn": "WE1",
+          "signature_algorithm": "ecdsa-with-SHA256",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2026-08-26 19:02:29Z",
+          "not_after": "2026-11-24 20:02:25Z",
+          "der_bytes": 946,
+          "sha256": "24bf8ba08afe3bb398b98bbda7c01bceac31c4202f61ffd6f1b2e63a02e8b604",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 64800,
+        "lifetime_hints_observed": [
+          64800,
+          64800
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 1888
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.196
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "www.fastly.com",
+      "panel_comment": "Fastly. Fastly's own product site, served from Fastly.",
+      "measured_at_utc": "2026-08-27T23:50:48Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "151.101.1.57",
+        "151.101.129.57",
+        "151.101.193.57",
+        "151.101.65.57"
+      ],
+      "ip": "151.101.1.57",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "www.fastly.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.145
+      },
+      "certificate_chain": {
+        "count": 2,
+        "der_bytes_total": 2530,
+        "der_bytes_per_certificate": [
+          1342,
+          1188
+        ],
+        "leaf": {
+          "subject": "CN=www.fastly.com",
+          "issuer": "CN=Certainly Intermediate R1,O=Certainly,C=US",
+          "issuer_cn": "Certainly Intermediate R1",
+          "signature_algorithm": "sha256WithRSAEncryption",
+          "key_type": "RSA",
+          "key_algorithm_oid_name": "rsaEncryption",
+          "key_bits": 2048,
+          "key_curve": null,
+          "not_before": "2026-08-25 19:32:00Z",
+          "not_after": "2026-09-24 19:31:59Z",
+          "der_bytes": 1342,
+          "sha256": "9c879318d38e0ceb9e26b95ae509149e0138e634c067a6409b768b3ca63e7121",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 1,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 86400,
+        "lifetime_hints_observed": [
+          86400
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 2323
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.129
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "docs.fastly.com",
+      "panel_comment": "Fastly. Fastly's own documentation site, served from Fastly.",
+      "measured_at_utc": "2026-08-27T23:50:52Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "151.101.1.91",
+        "151.101.129.91",
+        "151.101.193.91",
+        "151.101.65.91"
+      ],
+      "ip": "151.101.1.91",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "docs.fastly.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.219
+      },
+      "certificate_chain": {
+        "count": 2,
+        "der_bytes_total": 2544,
+        "der_bytes_per_certificate": [
+          1356,
+          1188
+        ],
+        "leaf": {
+          "subject": "CN=docs.fastly.com",
+          "issuer": "CN=Certainly Intermediate R1,O=Certainly,C=US",
+          "issuer_cn": "Certainly Intermediate R1",
+          "signature_algorithm": "sha256WithRSAEncryption",
+          "key_type": "RSA",
+          "key_algorithm_oid_name": "rsaEncryption",
+          "key_bits": 2048,
+          "key_curve": null,
+          "not_before": "2026-08-27 06:21:51Z",
+          "not_after": "2026-09-26 06:21:50Z",
+          "der_bytes": 1356,
+          "sha256": "75a757f1e352f842c949befd03df2df3d6bc4d3f9f2e9627b039c18afee911fe",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 1,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 86400,
+        "lifetime_hints_observed": [
+          86400
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 2343
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.219
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "ietf.org",
+      "panel_comment": "Reference. The standards body that publishes RFC 8446. The paper quotes its chain.",
+      "measured_at_utc": "2026-08-27T23:50:57Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "104.16.44.99",
+        "104.16.45.99"
+      ],
+      "ip": "104.16.44.99",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "ietf.org",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.183
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 2465,
+        "der_bytes_per_certificate": [
+          896,
+          675,
+          894
+        ],
+        "leaf": {
+          "subject": "CN=ietf.org",
+          "issuer": "CN=WE1,O=Google Trust Services,C=US",
+          "issuer_cn": "WE1",
+          "signature_algorithm": "ecdsa-with-SHA256",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2026-08-15 20:17:11Z",
+          "not_after": "2026-11-13 21:17:08Z",
+          "der_bytes": 896,
+          "sha256": "af24aad3551b72664140bd2ea5314c1970de6a7211a39b0abdff2b635f1d7e50",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 64800,
+        "lifetime_hints_observed": [
+          64800,
+          64800
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 1771
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.181
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "letsencrypt.org",
+      "panel_comment": "Reference. The CA whose issuance the paper's chain-size figures are drawn from.",
+      "measured_at_utc": "2026-08-27T23:51:02Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "35.157.26.135",
+        "63.176.8.218"
+      ],
+      "ip": "35.157.26.135",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": null,
+          "class": null,
+          "is_pq_hybrid": null
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "letsencrypt.org",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.15
+      },
+      "certificate_chain": {
+        "count": 4,
+        "der_bytes_total": 3576,
+        "der_bytes_per_certificate": [
+          1098,
+          656,
+          682,
+          1140
+        ],
+        "leaf": {
+          "subject": "CN=letsencrypt.org",
+          "issuer": "CN=YE2,O=Let's Encrypt,C=US",
+          "issuer_cn": "YE2",
+          "signature_algorithm": "ecdsa-with-SHA384",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2026-07-06 15:24:34Z",
+          "not_after": "2026-10-04 15:24:33Z",
+          "der_bytes": 1098,
+          "sha256": "a82dfa155d33e22a00fde0a2f6464623578d5b101d09923bd1b7f67f1714cecd",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 1,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 604800,
+        "lifetime_hints_observed": [
+          604800
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 1909
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": null,
+          "class": null,
+          "is_pq_hybrid": null
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.148
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "github.com",
+      "panel_comment": "Reference. A large first-party edge that is not one of the five providers above.",
+      "measured_at_utc": "2026-08-27T23:51:06Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "140.82.121.4"
+      ],
+      "ip": "140.82.121.4",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": null,
+          "class": null,
+          "is_pq_hybrid": null
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "github.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.149
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 2719,
+        "der_bytes_per_certificate": [
+          1010,
+          867,
+          842
+        ],
+        "leaf": {
+          "subject": "CN=github.com",
+          "issuer": "CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB",
+          "issuer_cn": "Sectigo Public Server Authentication CA DV E36",
+          "signature_algorithm": "ecdsa-with-SHA256",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2026-07-03 00:00:00Z",
+          "not_after": "2026-09-30 23:59:59Z",
+          "der_bytes": 1010,
+          "sha256": "17f8fd2e3fd2c113fcb9772d8a4babb8522dd06dd0794915a4ff98b1b6863a00",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 7200,
+        "lifetime_hints_observed": [
+          7200,
+          7200
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 1681
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": false,
+        "mechanism": null,
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_128_GCM_SHA256",
+        "key_exchange_group": {
+          "name": null,
+          "class": null,
+          "is_pq_hybrid": null
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "github.com",
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.16
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "a ticket was issued, saved and offered back to the same address and SNI, and the server completed a full handshake instead of resuming"
+      }
+    },
+    {
+      "host": "google.com",
+      "panel_comment": "Reference. The Google Front End on its highest-volume name, against which cloud.google.com can be compared.",
+      "measured_at_utc": "2026-08-27T23:51:10Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "66.102.1.100",
+        "66.102.1.101",
+        "66.102.1.102",
+        "66.102.1.113",
+        "66.102.1.138",
+        "66.102.1.139"
+      ],
+      "ip": "66.102.1.100",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "google.com",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.175
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 4812,
+        "der_bytes_per_certificate": [
+          2135,
+          1295,
+          1382
+        ],
+        "leaf": {
+          "subject": "CN=*.google.com",
+          "issuer": "CN=WR2,O=Google Trust Services,C=US",
+          "issuer_cn": "WR2",
+          "signature_algorithm": "sha256WithRSAEncryption",
+          "key_type": "EC",
+          "key_algorithm_oid_name": "id-ecPublicKey",
+          "key_bits": 256,
+          "key_curve": "P-256",
+          "not_before": "2026-08-10 08:37:35Z",
+          "not_after": "2026-11-02 08:37:34Z",
+          "der_bytes": 2135,
+          "sha256": "8f95cc30e88f6b71ef351f710332850c5544e7594af40b1a7e119e18efd61022",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 172800,
+        "lifetime_hints_observed": [
+          172800,
+          172800
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 3509
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": "X25519MLKEM768",
+          "class": "pq_hybrid",
+          "is_pq_hybrid": true
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.156
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    },
+    {
+      "host": "mozilla.org",
+      "panel_comment": "Reference. Operator of a root programme, and the source of the client-side policy the paper leans on.",
+      "measured_at_utc": "2026-08-27T23:51:15Z",
+      "outcome": "measured",
+      "error": null,
+      "port": 443,
+      "addresses_resolved": [
+        "35.190.14.201"
+      ],
+      "ip": "35.190.14.201",
+      "connection_1_full_handshake": {
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": null,
+          "class": null,
+          "is_pq_hybrid": null
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": "mozilla.org",
+        "reused_line_present": false,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.309
+      },
+      "certificate_chain": {
+        "count": 3,
+        "der_bytes_total": 3954,
+        "der_bytes_per_certificate": [
+          1277,
+          1295,
+          1382
+        ],
+        "leaf": {
+          "subject": "CN=mozilla.org",
+          "issuer": "CN=WR3,O=Google Trust Services,C=US",
+          "issuer_cn": "WR3",
+          "signature_algorithm": "sha256WithRSAEncryption",
+          "key_type": "RSA",
+          "key_algorithm_oid_name": "rsaEncryption",
+          "key_bits": 2048,
+          "key_curve": null,
+          "not_before": "2026-07-23 16:01:49Z",
+          "not_after": "2026-10-21 16:55:01Z",
+          "der_bytes": 1277,
+          "sha256": "a69d4fe50688ebc768c3d7113c4c36a47619b990bf999929ed505d79e0a939c0",
+          "unavailable_reason": null
+        },
+        "unavailable_reason": null
+      },
+      "session_ticket": {
+        "issued": true,
+        "observed_via": "post_handshake_newsessionticket",
+        "post_handshake_banner_count": 2,
+        "ticket_material_present": true,
+        "session_id_present": true,
+        "lifetime_hint_seconds": 172800,
+        "lifetime_hints_observed": [
+          172800,
+          172800
+        ],
+        "unavailable_reason": null,
+        "session_file_written": true,
+        "session_file_bytes": 2376
+      },
+      "connection_2_resumption": {
+        "attempted": true,
+        "not_attempted_reason": null,
+        "resumed": true,
+        "mechanism": "tls13_psk",
+        "mechanism_note": null,
+        "handshake_completed": true,
+        "tls_version": "TLSv1.3",
+        "cipher": "TLS_AES_256_GCM_SHA384",
+        "key_exchange_group": {
+          "name": null,
+          "class": null,
+          "is_pq_hybrid": null
+        },
+        "verify_return_code": 0,
+        "verify_return_text": "ok",
+        "verified_peername": null,
+        "verification_ok": true,
+        "how_it_ended": "exited",
+        "wall_seconds": 0.282
+      },
+      "controls": {
+        "server_issued_a_ticket": true,
+        "ticket_observed_via": "post_handshake_newsessionticket",
+        "ticket_was_offerable": true,
+        "resumption_was_attempted": true,
+        "both_connections_used_the_same_address": true,
+        "both_connections_used_the_same_sni": true,
+        "first_connection_verified_ok": true,
+        "negative_result_is_readable": true,
+        "readability_reason": "the host resumed, which is a positive result and needs no further control"
+      }
+    }
+  ]
+}

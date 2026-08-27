@@ -10,6 +10,7 @@ the latest available release of every provider that could be installed and drive
 | nginx | 1.31.4 | current stable | cross-vhost client-auth scope **not reproducible**; fix holds |
 | Go crypto/tls | 1.27.0 | current stable | **re-establishes** certificate expiry and trust-anchor membership |
 | HAProxy | 3.4.3-80ea565fd | 29 Jul 2026 | cross-frontend resumption **not reproducible** in this configuration |
+| 14 public endpoints | measured 27 Aug 2026 | live | **14 of 14** issue a ticket, **13 of 14** resume, **11 of 14** already negotiate a post-quantum hybrid key exchange |
 
 Every experiment carries a control. A negative result with no control is unreadable: it cannot
 distinguish "the implementation refused" from "the test never posed the question". Where a test
@@ -110,6 +111,53 @@ cross between them regardless of the August 2026 series. The series' companion c
 does would need those. What this run does establish is the version fact: the binary is
 `3.4.3-80ea565fd 2026/07/29`, and the series commits are dated 14 to 25 August 2026, so this
 stable release predates them.
+
+---
+
+## 6. Fourteen public endpoints: what the certificate handshake actually does
+
+`public-endpoints/`. Two connections per host, both to the same pinned address and the same SNI:
+one to mint a session ticket, one to offer it back. Nothing else. No credential is sent, and a
+ticket is never offered to a host that did not issue it, which is enforced in code rather than
+promised in prose. Against our own nginx and HAProxy that cross-host replay is the whole
+experiment; against somebody else's infrastructure it would be probing their access control, so
+this harness refuses to do it.
+
+Panel: the five providers the paper names, each on their own marketing or documentation site
+(AWS, Google Cloud, Azure, Cloudflare, Fastly), plus five reference points (ietf.org,
+letsencrypt.org, github.com, google.com, mozilla.org).
+
+**14 of 14 issued a session ticket. 13 of 14 resumed. 11 of 14 negotiated X25519MLKEM768.**
+
+Three findings bear directly on the paper.
+
+**Post-quantum key exchange is already the default at every provider the paper names.** AWS,
+Google, Azure, Cloudflare and Fastly all negotiated the hybrid group without being asked; so did
+ietf.org. The three that did not are letsencrypt.org, github.com and mozilla.org. The key
+exchange layer has migrated already. Authentication is the layer that has not, and it is the one
+that carries the bytes, which is the paper's subject and its urgency.
+
+**github.com issues a ticket and then declines to resume it.** The ticket was minted, saved and
+offered back to the same address and the same SNI, and the server completed a full handshake
+instead. That is a clean readable negative rather than an inconclusive one: the control record
+confirms the ticket was issued and offerable, so "did not resume" here means the server refused,
+not that the question went unasked. It is a fifth party declining to resume, found without
+looking for one.
+
+**Measured chain sizes span 2,465 to 5,785 bytes, median 3,650.** The paper's classical cost row
+is built on 3,393 B measured at ietf.org on 25 August, which sits comfortably inside that range.
+But ietf.org itself now serves 3 certificates totalling 2,465 B from a Cloudflare address, not
+the 4 certificates totalling 3,393 B the paper recorded three days earlier. The paper dates that
+measurement, so it is not wrong, but a single dated host is a weaker basis than a measured range,
+and this run supplies the range.
+
+Ticket lifetime hints run from 7,200 s at github.com to 604,800 s at letsencrypt.org, the latter
+being exactly the seven-day maximum RFC 9846 permits.
+
+Every record carries its controls: whether a ticket was issued, whether it was offerable, whether
+both connections used the same address and the same SNI, and whether a negative result is
+readable at all. A host that issues no ticket cannot be said to have refused to resume, and the
+harness records that case as null rather than false.
 
 ---
 

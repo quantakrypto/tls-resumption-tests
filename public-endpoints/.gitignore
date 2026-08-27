@@ -1,0 +1,3 @@
+# Scratch from selftest.sh. The committed evidence is results.json / results.md.
+selftest-out/
+__pycache__/
