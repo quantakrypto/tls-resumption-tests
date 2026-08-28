@@ -101,11 +101,15 @@ Chain sizes did not move at all between 27 and 28 August. Every host served the 
 certificates totalling the same DER bytes, so the range the paper quotes, 2,465 to 5,785 B with
 a median of 3,650, is a second-day replication rather than a single reading.
 
-`aws.amazon.com` did not replicate. It resumed on the silent run and refused on the HEAD run
-ninety seconds later, and its ticket lifetime hint differed between the two, 77,838s against
-56,146s, and again from the 72,108s of the previous day. Both connections in each pair used the
-same pinned address, so the pinning that makes a refusal readable elsewhere is not enough at
-that address: it fronts more than one ticket-issuing backend. **A single `resumed: false` from a
-CDN anycast address is therefore not evidence of a policy**, and nothing in the paper rests on
-one. What distinguishes `github.com` is that its refusal is stable across every run and its
-lifetime hint never moves.
+`aws.amazon.com` did not replicate, and the reason is worth stating carefully, because the
+obvious summary of it is wrong. The silent run resolved to 143.204.238.22 and resumed there. The
+HEAD run, ninety seconds later, resolved to 13.32.121.33 and was refused. So the flip is not one
+address changing its mind: the two runs reached different edges.
+
+The within-address evidence is separate and is what carries the point. 13.32.121.33 resumed on
+27 August and refused on 28 August, with ticket lifetime hints of 72,108 and 56,146 seconds. Each
+run pinned a single address across both of its connections, so every individual result here is
+readable, but the outcome is not a property of the host. **A single `resumed: false` from a CDN
+anycast address is therefore not evidence of a policy**, and nothing in the paper rests on one.
+What distinguishes `github.com` is that its refusal is stable across every run, at one address,
+with a lifetime hint that never moves.

@@ -189,11 +189,12 @@ travel with the claim, which is why it now appears in the paper's source note ra
 here.
 
 Two cautions, both recorded rather than smoothed over. The absence of a ticket on a silent
-connection is bounded by the harness's two-second hold, not absolute. And `aws.amazon.com`
-resumed on one run and refused on the next ninety seconds later, with a different ticket
-lifetime hint each time despite the pinned address, so that address fronts more than one
-ticket-issuing backend: **a single `resumed: false` from a CDN anycast address is not evidence of
-a policy.** What distinguishes github.com is that its refusal is stable across every run and its
+connection is bounded by the harness's two-second hold, not absolute. And `aws.amazon.com` is
+not stable across runs: at one address, 13.32.121.33, it resumed on 27 August and refused on 28
+August with lifetime hints of 72,108 and 56,146 seconds, while the silent run reached a different
+address entirely and resumed there. Each run pinned one address across both its connections, so
+each result is readable on its own, but **a single `resumed: false` from a CDN anycast address is
+not evidence of a policy.** What distinguishes github.com is that its refusal is stable across every run and its
 lifetime hint never moves.
 
 ---
