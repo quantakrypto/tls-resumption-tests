@@ -141,8 +141,12 @@ that carries the bytes, which is the paper's subject and its urgency.
 offered back to the same address and the same SNI, and the server completed a full handshake
 instead. That is a clean readable negative rather than an inconclusive one: the control record
 confirms the ticket was issued and offerable, so "did not resume" here means the server refused,
-not that the question went unasked. It is a fifth party declining to resume, found without
-looking for one.
+not that the question went unasked. It has since replicated: both runs of section 7 and the
+independent TypeScript implementation in `quantakrypto/pqc-observatory` show the same thing.
+
+It is **not** a fifth party for the paper's section 5. That roster is about resumption under
+client authentication, and this is a plain connection with no client certificate anywhere in it.
+The paper says so explicitly and this repository should not be read as claiming otherwise.
 
 **Measured chain sizes span 2,465 to 5,785 bytes, median 3,650.** The paper's classical cost row
 is built on 3,393 B measured at ietf.org on 25 August, which sits comfortably inside that range.
@@ -158,6 +162,39 @@ Every record carries its controls: whether a ticket was issued, whether it was o
 both connections used the same address and the same SNI, and whether a negative result is
 readable at all. A host that issues no ticket cannot be said to have refused to resume, and the
 harness records that case as null rather than false.
+
+---
+
+## 7. The same panel, asked and not asked: 8 of 14 against 14 of 14
+
+`public-endpoints/ticket-prompting/`. The same instrument and the same panel, run twice back to
+back with one argument different: `--request none` against `--request head`.
+
+**A silent connection drew a session ticket from 8 of 14 hosts. A single `HEAD /` drew one from
+all 14.** The six that withhold until asked are every Google-fronted and every Cloudflare-fronted
+name on the panel and nothing else: `cloud.google.com`, `google.com`, `mozilla.org`,
+`www.cloudflare.com`, `developers.cloudflare.com` and `ietf.org`.
+
+Two things follow for the paper.
+
+**The corroboration is comparable to the figure it corroborates, and now demonstrably so.** The
+94.8% the paper cites comes from a scan that probed "whether the servers support TLS and session
+tickets by sending an HTTPS request" (Hebrok et al., section 5.1.1). Ours sends one too. Before
+this experiment that agreement was an accident of how `probe.py` happened to be written; it is
+now a recorded condition of the measurement, in both directions.
+
+**A reader reproducing the figure with a bare handshake will not get it.** They would measure 8
+of 14 and conclude the paper overstated the availability of resumption. The condition has to
+travel with the claim, which is why it now appears in the paper's source note rather than only
+here.
+
+Two cautions, both recorded rather than smoothed over. The absence of a ticket on a silent
+connection is bounded by the harness's two-second hold, not absolute. And `aws.amazon.com`
+resumed on one run and refused on the next ninety seconds later, with a different ticket
+lifetime hint each time despite the pinned address, so that address fronts more than one
+ticket-issuing backend: **a single `resumed: false` from a CDN anycast address is not evidence of
+a policy.** What distinguishes github.com is that its refusal is stable across every run and its
+lifetime hint never moves.
 
 ---
 
